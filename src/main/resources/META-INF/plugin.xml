@@ -5,11 +5,23 @@
     <vendor>leo-benz</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.leobenz.composelayoutdumper.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.leobenz.composelayoutdumper.startup.MyProjectActivity" />
+<!--        <toolWindow factoryClass="com.github.leobenz.composelayoutdumper.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>-->
+<!--        <postStartupActivity implementation="com.github.leobenz.composelayoutdumper.startup.MyProjectActivity" />-->
+        <notificationGroup id="Compose Layout Exporter" displayType="BALLOON"/>
     </extensions>
+
+    <actions>
+        <!-- Add an action to the Tools menu -->
+        <action id="ComposeLayoutExporter.ExportAction"
+                class="com.github.leobenz.composelayoutdumper.actions.ExportComposeLayoutAction"
+                text="Export Compose Layout to JSON"
+                description="Exports the current Compose Layout Inspector tree to a JSON file.">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
