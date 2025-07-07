@@ -35,7 +35,7 @@ dependencies {
     testImplementation(libs.opentest4j)
     
     // Add protobuf-java-util for JsonFormat support
-    implementation("com.google.protobuf:protobuf-java-util:4.29.3")
+    implementation("com.google.protobuf:protobuf-java-util:4.31.1")
 
     // IntelliJ Platform Gradle Plugin Dependencies Extension - read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin-dependencies-extension.html
     intellijPlatform {
